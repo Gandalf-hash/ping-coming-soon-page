@@ -1,7 +1,9 @@
+import { AppEmailInput } from "./components/email-input";
+
 function App() {
   return (
     <main className="page-container">
-      <div>
+      <div className="logo">
         <img src="/images/logo.svg" alt="" />
       </div>
       <div>
@@ -10,7 +12,9 @@ function App() {
         </h1>
         <h3>Subscribe and get notified</h3>
       </div>
-      <div></div>
+      <div>
+        <AppEmailInput />
+      </div>
     </main>
   );
 }

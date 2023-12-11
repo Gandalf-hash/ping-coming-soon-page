@@ -1,32 +1,34 @@
 body,
 html {
-  padding: 20px 80px;
+  width: 100%;
+  max-height: 100%;
+  padding: 20px 0;
   display: flex;
   font-family: sans-serif;
   align-items: center;
   justify-content: center;
+}
 
-  @media (min-width: 1040px) {
-    margin: 10px;
-    padding: 50px;
-  }
+.logo {
+  display: block;
+  margin: auto;
 }
 .page-container {
+  max-width: 100vw;
   display: flex;
-  gap: 20px;
   flex-direction: column;
-  align-items: center;
+  margin: auto;
+  gap: 20px;
 }
 
 h1 {
   font-size: 3em;
   font-weight: 100;
-  white-space: nowrap;
-  letter-spacing: 6px;
+  letter-spacing: 4px;
   color: gray;
 
   @media (max-width: 425px) {
-    font-size: 1.4rem;
+    font-size: 1.8em;
   }
 }
 
@@ -43,5 +45,63 @@ span {
 
 h3 {
   font-weight: 100;
-  letter-spacing: 2px;
+}
+
+input {
+  min-width: 70%;
+  font-size: 16px;
+  padding: 14px 0;
+  border: 1px solid gray;
+  border-radius: 50px;
+
+  @media (min-width: 375px) {
+    width: 100%;
+  }
+}
+
+.input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+input::after {
+  content: "";
+  border-color: gray;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  font-size: 18px;
+  color: #ffff;
+  display: block;
+  align-items: center;
+  padding: 16px 0;
+  border-radius: 50px;
+  border: none;
+  background: #4d7bf3;
+  cursor: pointer;
+  box-shadow: -1px 13px 10px -7px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: -1px 13px 10px -7px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: -1px 13px 10px -7px rgba(0, 0, 0, 0.7);
+
+  @media (min-width: 375px) {
+    width: 100%;
+  }
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
 }
