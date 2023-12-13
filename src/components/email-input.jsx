@@ -21,14 +21,6 @@ export const AppEmailInput = ({ disabled = false }) => {
     }
   };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-
-    if (!isValidEmail(email)) {
-      setError("Valid Email Required");
-    }
-  };
-
   const inputStyle = {
     backgroundColor: error ? "#f2ddda" : "",
     color: error ? "#ed614c" : "",
