@@ -9,7 +9,7 @@ export const AppEmailInput = ({ disabled = false }) => {
   };
   const handleBlur = () => {
     if (!isValidEmail(email)) {
-      setError("Valid Email Required");
+      setError("Please provide a valid email address");
     } else {
       setError(null);
     }
@@ -34,28 +34,45 @@ export const AppEmailInput = ({ disabled = false }) => {
     color: error ? "#ed614c" : "",
     borderColor: error ? "#FF0000" : "",
   };
+
+  const errorMessageStyle = {
+    color: "red",
+    fontSize: "14px",
+    marginLeft: "10px",
+    marginTop: "10px",
+  };
   return (
-    <form className="input-container" onSubmit={handleFormSubmit}>
-      <div>
-        <input
-          type="email"
-          name="email"
-          placeholder="Your email address..."
-          style={inputStyle}
-          value={email}
-          onChange={handleChange}
-          onBlur={handleBlur}
-        />
-      </div>
-      <div className="button-div">
-        <button
-          className={` ${disabled ? "error-state" : ""}`}
-          type="submit"
-          disabled={!email}
+    <>
+      {error && <span style={errorMessageStyle}>{error}</span>}
+      <div className="input-container">
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "start",
+          }}
         >
-          Notify me
-        </button>
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email address..."
+            style={inputStyle}
+            value={email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+        </div>
+        <div style={{ width: "100%" }}>
+          <button
+            className={` ${disabled ? "error-state" : ""}`}
+            type="submit"
+            disabled={!email}
+          >
+            Notify me
+          </button>
+        </div>
       </div>
-    </form>
+    </>
   );
 };

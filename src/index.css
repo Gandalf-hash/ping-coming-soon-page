@@ -1,12 +1,20 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  min-width: 100%;
   margin: 0;
   padding: 0;
-  max-height: 100%;
   display: flex;
   font-family: sans-serif;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    overflow-x: hidden;
+  }
 }
 
 .logo {
@@ -16,6 +24,7 @@ body {
 .page-container {
   margin: auto;
   padding: 20px 20px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +36,7 @@ h1 {
   font-weight: 100;
   color: gray;
 
-  @media (max-width: 425px) {
+  @media (max-width: 540px) {
     font-size: 1.8em;
   }
 }
@@ -56,7 +65,7 @@ input {
   border-radius: 50px;
 
   @media (max-width: 768px) {
-    width: 400px;
+    width: 360px;
   }
 }
 
@@ -64,12 +73,14 @@ input {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
   gap: 10px;
+  margin-top: 10px;
 
   @media (max-width: 768px) {
+    width: 360px;
     display: flex;
     flex-direction: column;
+    margin: auto;
   }
 }
 
@@ -83,28 +94,31 @@ input:focus {
 }
 
 button {
+  display: inline-b;
   font-size: 18px;
+  width: 100%;
   white-space: nowrap;
   color: #ffff;
   display: block;
   align-items: center;
-  padding: 16px 60px;
+  padding: 14px 64px;
   border-radius: 50px;
   border: none;
   background: #4d7bf3;
   cursor: pointer;
+  box-shadow: -1px 5px 5px 0px rgba(126, 118, 246, 0.75);
+  -webkit-box-shadow: -1px 5px 5px 0px rgba(126, 118, 246, 0.75);
+  -moz-box-shadow: -1px 5px 5px 0px rgba(126, 118, 246, 0.75);
 
-  @media (max-width: 425px) {
-    width: 100vw;
+  @media (max-width: 768px) {
+    max-width: 360px;
+    margin-top: 8px;
   }
 }
 
 button:hover {
   transform: scale(1.05);
   opacity: 0.8;
-  box-shadow: -1px 13px 10px -7px rgba(0, 0, 0, 0.7);
-  -webkit-box-shadow: -1px 13px 10px -7px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: -1px 13px 10px -7px rgba(0, 0, 0, 0.7);
 
   @media (max-width: 425px) {
     transform: none;
@@ -118,8 +132,8 @@ button:hover {
   margin: auto;
   margin-top: 50px;
 
-  @media (max-width: 425px) {
-    width: 100%;
+  @media (max-width: 768px) {
+    width: 100vw;
   }
 }
 
