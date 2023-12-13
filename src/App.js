@@ -1,4 +1,9 @@
 import { AppEmailInput } from "./components/email-input";
+import {
+  AppFacebookIcon,
+  AppInstagramIcon,
+  AppTwitterIcon,
+} from "./components/icons";
 
 function App() {
   return (
@@ -20,7 +25,21 @@ function App() {
           <img src="/images/illustration-dashboard.png" alt="Illustration" />
         </div>
       </main>
-      <footer></footer>
+      <footer>
+        <AppFacebookIcon />
+        <AppTwitterIcon />
+        <AppInstagramIcon />
+      </footer>
+      <div
+        style={{
+          textAlign: "center",
+          fontSize: "12px",
+          marginTop: "6px",
+          color: "gray",
+        }}
+      >
+        Copyrights Ping. All rights reserved
+      </div>
     </>
   );
 }
